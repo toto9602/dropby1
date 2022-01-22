@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import Loading from "./src/screens/Loading";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./src/infrastructure/theme";
+import {
+  useFonts as useNanum,
+  NanumGothic_400Regular,
+} from "@expo-google-fonts/nanum-gothic";
+import {
+  useFonts as useDongle,
+  Dongle_400Regular,
+} from "@expo-google-fonts/dongle";
 
+import Loading2 from "./src/screens/Loading2";
+//NanumGothic_400Regular
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [nanumLoaded] = useNanum({
+    NanumGothic_400Regular,
+  });
+  const [dongleLoaded] = useDongle({
+    Dongle_400Regular,
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (nanumLoaded && dongleLoaded) {
+    return (
+      <>
+        <ThemeProvider theme={theme}>
+          <Loading />
+        </ThemeProvider>
+        <ExpoStatusBar style="light" />
+      </>
+    );
+  } else {
+    return <Loading2 />;
+  }
+}

@@ -5,18 +5,34 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
+    "@expo-google-fonts/dongle": "^0.2.2",
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@expo-google-fonts/nanum-gothic": "^0.2.2",
+    "@expo-google-fonts/oswald": "^0.2.2",
     "expo": "~44.0.0",
+    "expo-font": "~10.0.4",
+    "expo-linear-gradient": "^11.0.0",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-web": "0.17.1"
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-paper": "^4.11.2",
+    "react-native-svg": "12.1.1",
+    "react-native-web": "0.17.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@svgr/webpack": "^6.2.0",
+    "eslint": "7.32.0",
+    "prettier": "^2.5.1",
+    "react-native-svg-transformer": "^1.0.0"
   },
   "private": true
 }
