@@ -1,9 +1,10 @@
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { theme } from "../../infrastructure/theme";
 import LoadIcon from "../../../assets/LoadIcon";
 import { SvgXml } from "react-native-svg";
+import cloud from "../../../assets/cloud.png";
 
 import LetsDrop from "../../../assets/LetsDrop";
 

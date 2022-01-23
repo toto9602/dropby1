@@ -19,6 +19,8 @@ export const colors = {
     b: "#922A92",
     c: "#7D2D9D",
     d: "#5A3084",
+    primary: "#262626",
+    secondary: "#757575",
   },
   text: {
     primary: "#262626",

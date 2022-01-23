@@ -17,6 +17,8 @@ import {
 
 import { Loading2 } from "./src/components/Loading2";
 
+import { LocationContextProvider } from "./src/services/location/location.context";
+
 //NanumGothic_400Regular
 export default function App() {
   const [nanumLoaded] = useNanum({
@@ -30,7 +32,9 @@ export default function App() {
     return (
       <>
         <ThemeProvider theme={theme}>
-          <Navigation />
+          <LocationContextProvider>
+            <Navigation />
+          </LocationContextProvider>
         </ThemeProvider>
         <ExpoStatusBar style="light" />
       </>
