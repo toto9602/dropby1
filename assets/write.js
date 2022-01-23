@@ -1,4 +1,4 @@
-export default `<svg width="62" height="72" viewBox="0 0 62 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+export default `<svg width="62" height="62" viewBox="0 0 62 72" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_2_1294)">
 <ellipse cx="31" cy="36.5" rx="27" ry="27.5" fill="url(#paint0_linear_2_1294)"/>
 </g>

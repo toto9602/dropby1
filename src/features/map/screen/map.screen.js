@@ -1,6 +1,13 @@
 import * as React from "react";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
-import { StyleSheet, View, Dimensions, Image, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  Image,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { useEffect, useContext, useState } from "react";
 import { LocationContext } from "../../../services/location/location.context";
 
@@ -8,6 +15,7 @@ import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 import cloud from "../../../../assets/cloud.png";
 import write from "../../../../assets/write";
+import currentLocationn from "../../../../assets/currentLocation";
 import currentLocation from "../../../../assets/currentLocation";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 const Map = styled(MapView)`
@@ -22,18 +30,21 @@ top: 5px
 `;
 
 const Container = styled.View`
-  position: absolute;
+position: absolute
+flex-direction: row
+padding: ${(props) => props.theme.space[3]};
   z-index: 999;
-  bottom: 60px
-left: 20px
+  bottom: 67px
+
   width: 100%;
 `;
 
-const Container2 = styled.View`
-  position: absolute;
+const ContainerEnd = styled.View`
+  justify-content: flex-end;
+  flex-direction: row;
   z-index: 999;
-  bottom: 60px
-left:120px
+  bottom: -8px
+  flex: 1;
   width: 100%;
 `;
 
@@ -48,7 +59,7 @@ export const MapScreen = ({ navigation, route }) => {
   return (
     <>
       <ExpoStatusBar style="auto"></ExpoStatusBar>
-      <Text>안녕</Text>
+
       <SearchContainer>
         <Image source={cloud} height={542} width={158}></Image>
       </SearchContainer>
@@ -70,12 +81,18 @@ export const MapScreen = ({ navigation, route }) => {
           }}
         ></MapView.Marker>
       </Map>
+
       <Container>
-        <SvgXml xml={write} width={54} height={64} />
+        <TouchableOpacity>
+          <SvgXml xml={write} width={56} height={65} />
+        </TouchableOpacity>
+
+        <ContainerEnd>
+          <TouchableOpacity>
+            <SvgXml xml={currentLocation} width={50} height={50} />
+          </TouchableOpacity>
+        </ContainerEnd>
       </Container>
-      <Container2>
-        <SvgXml xml={currentLocation} width={54} height={54.96} />
-      </Container2>
     </>
   );
 };

@@ -1,6 +1,18 @@
-export default `<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M27 54.96C41.9117 54.96 54 42.6568 54 27.48C54 12.3032 41.9117 0 27 0C12.0883 0 0 12.3032 0 27.48C0 42.6568 12.0883 54.96 27 54.96Z" fill="url(#pattern0)"/>
+export default `<svg width="62" height="63" viewBox="0 0 62 63" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_d_2_1314)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31 54.96C45.9117 54.96 58 42.6568 58 27.48C58 12.3032 45.9117 0 31 0C16.0883 0 4 12.3032 4 27.48C4 42.6568 16.0883 54.96 31 54.96Z" fill="url(#pattern0)" shape-rendering="crispEdges"/>
+</g>
 <defs>
+<filter id="filter0_d_2_1314" x="0" y="0" width="62" height="62.96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_1314"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_1314" result="shape"/>
+</filter>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_2_1314" transform="translate(-0.0444444 -0.0349345) scale(0.00444444)"/>
 </pattern>
