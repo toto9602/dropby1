@@ -5,6 +5,7 @@ const {User} = require('../models/index')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const blacklist = require('jwt-blacklist');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 require('dotenv').config();
 
 const loginVerify = async (email, password, done) => {
@@ -44,6 +45,13 @@ const JWTRefreshVerify = async (jwtrefresh, done) => {
     // console.log('jwtverified', verified);
     // return done(null, verified);            
 }
+
+const googleVerify = (request, accessToken, refreshToken, profile, cb) => {
+    User.findOrCreate({email:profile.emails[0]}, (error, user) => {
+        return cb(error, user);
+    })
+
+}
 module.exports = () => {
     //Local Strategy
     passport.use('local',
@@ -68,4 +76,12 @@ module.exports = () => {
             secretOrKey:process.env.JWT_SECRET_REFRESH_KEY
         }, JWTRefreshVerify)
     );
+
+    //Google Strategy
+    passport.use(new GoogleStrategy({
+        clientID:GOOGLE_CLIENT_ID,
+        clientSecret:GOOGLE_CLIENT_SECRET,
+        callbackURL:'http://localhost:3000/auth/google/callback',
+        passReqToCallback:true
+    }, googleVerify))
 };
